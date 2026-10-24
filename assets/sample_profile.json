@@ -4,5 +4,13 @@
  "home": "Tempe, AZ",
  "max_spend_usd": 150,
  "max_travel_hours": 8,
- "hour_value": 1.2
+ "hour_value": 1.2,
+ "weights": {
+  "fit": 5,
+  "career": 5,
+  "effort": 3,
+  "funding": 2,
+  "schedule": 4,
+  "travel": 2
+ }
 }
