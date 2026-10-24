@@ -91,7 +91,7 @@ Score out of 100 = value minus cost. Value is how well it fits the dream job, ti
 (a pipeline beats meeting the right people, which beats a credential, a skill, money, then exposure), plus pay and
 selectivity. Cost is the hours (less for hours spent squarely on the path), the money against their budget, and
 the travel. Over budget or past their travel limit costs extra. 70+ is a top pick, 50-69 worth it, 30-49 only if
-they're free, under 30 skip. Exams and heavily weighted work always win a conflict: the Skill never tells a
+they're free, under 30 skip. Anything that takes under an hour and scores 30+ is a quick win and goes first. Exams and heavily weighted work always win a conflict: the Skill never tells a
 student to skip an exam; it says to ask about another date.
 
 ## Replies

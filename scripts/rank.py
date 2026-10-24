@@ -131,8 +131,10 @@ def overlaps(opp: dict, commitments: list) -> list:
     return hits
 
 
-def verdict(points: int, conflicts: list) -> tuple[str, list]:
-    if points >= 70:
+def verdict(points: int, conflicts: list, hours: float = 99) -> tuple[str, list]:
+    if hours <= 1 and points >= 30:
+        label = "Quick win: under an hour, do it now"
+    elif points >= 70:
         label = "Top pick"
     elif points >= 50:
         label = "Worth it"
@@ -167,10 +169,11 @@ def rank(profile: dict, opps: list, commitments: list, today: date, seen: set, n
             continue
         s = score(o, profile)
         conflicts = overlaps(o, commitments)
-        label, advice = verdict(s["score"], conflicts)
+        label, advice = verdict(s["score"], conflicts, num(o.get("hours"), 99))
         days_left = (deadline - today).days if deadline else None
         out.append({**o, **s, "id": oid, "verdict": label, "conflicts": advice, "days_left": days_left})
-    out.sort(key=lambda r: (-r["score"], r["days_left"] if r["days_left"] is not None else 999))
+    out.sort(key=lambda r: (not r["verdict"].startswith("Quick win"), -r["score"],
+                            r["days_left"] if r["days_left"] is not None else 999))
     return out
 
 
@@ -187,7 +190,8 @@ def text(rows: list, top: int) -> str:
             bits.append("apply TODAY" if r["days_left"] == 0 else f"deadline in {r['days_left']}d ({r['deadline']})")
         if r.get("start"):
             bits.append(f"on {r['start']}" + (f" to {r['end']}" if r.get("end") and r["end"] != r["start"] else ""))
-        bits.append("remote" if r.get("remote") else (r.get("location") or "location unknown"))
+        if r.get("remote") or r.get("location"):
+            bits.append("remote" if r.get("remote") else r["location"])
         if num(r.get("award_usd")):
             bits.append(f"pays {money(num(r['award_usd']))}")
         if num(r.get("cost_usd")):
