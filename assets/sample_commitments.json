@@ -1,0 +1,5 @@
+[
+ {"title": "PSY 101 midterm", "kind": "exam", "start": "2026-10-29"},
+ {"title": "ENG 302 memo", "kind": "assignment", "due": "2026-11-07", "weight_pct": 5},
+ {"title": "Shift at the library", "kind": "work", "start": "2026-11-08"}
+]
