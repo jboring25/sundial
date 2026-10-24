@@ -16,7 +16,7 @@ Six criteria, each scored 0-100, averaged with the student's own 1-5 importance 
 Fit also scales the total (x0.5 at fit 0, x1 at fit 10), and fit 3 or less is capped at 35:
 a cheap, easy detour is still a detour.
 
-Standard library only. State lives under ~/.config/opportunity-radar/ (survives restarts and Skill updates).
+Standard library only. State lives under ~/.config/sundial/ (survives restarts and Skill updates).
 Exit codes: 0 ok, 2 bad arguments or unreadable JSON, 3 no profile saved yet, 4 no opportunities to rank.
 """
 
@@ -47,7 +47,7 @@ def fail(message: str, code: int):
 
 
 def state_dir() -> Path:
-    return Path(os.environ.get("SKILL_DATA_DIR") or Path.home() / ".config" / "opportunity-radar")
+    return Path(os.environ.get("SKILL_DATA_DIR") or Path.home() / ".config" / "sundial")
 
 
 def read_json(path, what: str):

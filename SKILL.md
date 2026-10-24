@@ -1,9 +1,9 @@
 ---
-name: opportunity-radar
+name: sundial
 description: Finds the opportunities that move a student toward their dream job, from professors' emails, Canvas, their school's site and job boards, and ranks them by what matters most to them. Use when the student asks what's worth applying to, what they're missing, whether an event, program or listing is worth it or legit, whether to skip class or work for something, or forwards an opportunity email; also for "find me internships, research, fellowships, scholarships, conferences or hackathons in my field", even if they don't say "opportunity".
 ---
 
-# Opportunity Radar
+# Sundial
 
 The most expensive thing a driven student loses is the opportunity they never saw: the research spot a professor
 mentioned in one email, the fellowship that closed Friday. This Skill finds those opportunities, checks they're
@@ -103,7 +103,7 @@ merges with the saved profile, so to change one thing ("money matters more now")
      the student's Gmail; never send it. They send it.
 7. **Offer the weekly radar** the first time: "Want me to check every Sunday at 6 pm and text you only what's new
    and worth it?" Create it only after a yes, at the time and day they pick. Word the check-in so it makes sense
-   on its own later: "Opportunity Radar weekly check: gather new opportunities for <dream job> from email,
+   on its own later: "Sundial weekly check: gather new opportunities for <dream job> from email,
    Canvas, <school>'s pages and job boards, check they're real, rank them with rank.py using --new-only, and text
    the top 3 if any score 55 or more; otherwise send nothing."
 
